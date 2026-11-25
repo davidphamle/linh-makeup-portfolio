@@ -43,6 +43,29 @@ environment variables, so it deploys on Vercel with zero config.
    25 Nov 2026). Location is North Adelaide, SA. Availability is one
    line: not available Christmas / New Year, travel 5 Dec 2026 – 6 Jan 2027.
 
+## Analytics (added 25 Nov 2026)
+
+- Packages: `@vercel/analytics` ^2.0.1 and `@vercel/speed-insights`
+  ^2.1.0, installed with `npm install --save`.
+- Wired in: `src/app/layout.tsx` renders `<Analytics />` (from
+  `@vercel/analytics/react`) and `<SpeedInsights />` (from
+  `@vercel/speed-insights/next`) inside `<body>`, after `{children}`.
+  No other copy, images or the Three.js hero were changed.
+- What it tracks: page views via Vercel Web Analytics, and real-user
+  performance (Core Web Vitals) via Speed Insights. Both load from
+  Vercel's script host at runtime.
+- Viewing the data: in the Vercel dashboard, open the
+  `linh-makeup-portfolio` project and go to Analytics (Web Analytics)
+  and Speed Insights. The dashboard will show the plan status for
+  these features; no price or plan is claimed here.
+- Verified in the build (25 Nov 2026): `npm run build` passes, and the
+  built layout chunk `out/_next/static/chunks/app/layout-*.js` (loaded
+  by `out/index.html`) contains `_vercel/insights/script.js`,
+  `va.vercel-scripts.com/v1/script.debug.js`,
+  `va.vercel-scripts.com/v1/speed-insights/script.js` and
+  `_vercel/speed-insights/script.js`. Data only appears in the
+  dashboard after the site is redeployed and visited.
+
 ## Image sources (all Linh's own work, from her Framer site)
 
 Source: https://dieplammakeup.framer.website/ ("Diep Lam Makeup, by Linh
