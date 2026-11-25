@@ -3,16 +3,18 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Linh Nguyen — Make-up Artist, Adelaide',
-  description: 'Freelance make-up artist in Adelaide with 8 years of experience in weddings and events across Adelaide and Vietnam. Bilingual English and Vietnamese. Bridal, event and theatre makeup. Price on enquiry.',
+  description: 'Bridal, event & theatrical makeup artist in Adelaide. Selected work 2016–2022. English & Tiếng Việt.',
   keywords: ['makeup artist Adelaide', 'bridal makeup Adelaide', 'Vietnamese makeup artist', 'Linh Nguyen makeup'],
   authors: [{ name: 'Linh Nguyen' }],
+  metadataBase: new URL('https://linh-makeup-portfolio.vercel.app'),
   openGraph: {
     title: 'Linh Nguyen — Make-up Artist, Adelaide',
-    description: 'Freelance make-up artist in Adelaide, 8 years of weddings and events in Adelaide and Vietnam. English & Tiếng Việt.',
+    description: 'Bridal, event & theatrical makeup artist. Selected work 2016–2022.',
     type: 'website',
     locale: 'en_AU',
+    images: [{ url: '/portfolio/hero.jpg', alt: 'Linh Nguyen — bridal makeup' }],
   },
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://linh-makeup-portfolio.vercel.app/' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

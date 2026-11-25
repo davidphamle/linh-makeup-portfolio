@@ -4,3 +4,11 @@
 
 html { scroll-behavior: smooth; }
 body { background: #fdf8f3; }
+
+/* Scroll reveal: subtle fade + rise, once per element */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
