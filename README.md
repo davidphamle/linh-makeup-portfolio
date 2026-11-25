@@ -43,6 +43,71 @@ environment variables, so it deploys on Vercel with zero config.
    25 Nov 2026). Location is North Adelaide, SA. Availability is one
    line: not available Christmas / New Year, travel 5 Dec 2026 – 6 Jan 2027.
 
+## v3 — unslop pass (25 Nov 2026)
+
+Design pass run with [unslop](https://github.com/heydamir/unslop) by
+Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed
+CC BY 4.0. Direction: a portfolio for a freelance bridal, event and
+theatrical makeup artist in Adelaide and Vietnam, that gets brides
+and teaching employers to email or call. Character: warm, precise,
+unhurried. World: a makeup chair in soft morning light — skin,
+powder, blush, gold jewellery, a hand mirror. Moments: the hero
+bridal portrait, and the gallery of real work. Signature: a thin
+gold hairline rule under each section title, and quiet mono look
+numbers ("Bridal · Look 01") under each gallery photo.
+
+What changed, per pass:
+
+1. **Spacing** — one rhythm everywhere: all sections py-16 / md:py-24
+   (was mixed py-14 and py-14 md:py-20), page padding px-5 → px-6,
+   group gaps mt-7/mt-9 → mt-8.
+2. **Color** — hero hue gradient (pink → cream → tan) removed; hero
+   is calm paper now. Text consolidated from stone greys + brand
+   tints into one warm ramp (`ink` primary/secondary/muted in
+   `tailwind.config.ts`). Borders are hairlines (`black/10`).
+   Stat chips (pills) became a quiet figure row with hairline
+   dividers. The Three.js shimmer particles and translucent blobs
+   were removed — decorative filler competing with the real bridal
+   portrait, which is now the one bright element. `HeroCanvas.tsx`
+   deleted; `three` is still in package.json as an unused dependency.
+3. **Icons** — lightbox `✕` `‹` `›` text glyphs replaced with one
+   inline SVG set, 18px, 1.5 stroke. No emoji anywhere (there were
+   none).
+4. **Copy** — unchanged in wording; no hype, no exclamation marks,
+   no trailing periods on labels. "Price on enquiry" is now sentence
+   case instead of uppercase tracked.
+5. **Type** — Georgia display serif is now only on the h1 and
+   section h2s (was also on card titles, timeline years, footer and
+   logo). Logo, card titles, years and footer are sans, 500 weight.
+   Timeline years and stat figures use tabular numbers. Logo
+   sub-label and price line lost their uppercase wide tracking.
+6. **Layout** — sections and order unchanged. Services grid now has
+   varied widths (Bridal/Event/Party span 2 of 6, Theatre/Lesson
+   span 3) instead of five identical cards.
+7. **Details** — pills became 8px control radius (buttons, toggles,
+   filters, lightbox controls); cards stay 16px; hero image 32px →
+   16px with a soft neutral shadow. One visible focus ring added
+   in `globals.css`. Gallery captions are quiet mono meta.
+8. **Visuals** — no generated image: the real photos already are the
+   visual. Hero is the bridal portrait alone on calm paper.
+9. **Motion** — reveal is now an 8px rise over 400ms on one
+   ease-out curve (was 14px / 600ms on every element); gallery
+   hover is an opacity change, not a scale; parallax and the
+   looping particle drift are gone with the canvas.
+
+Also in v3 (from the earlier fix list, kept): "Selected work
+2016–2022" corrected to "2016–now"; favicon set added (cropped
+from the hero photo); JSON-LD `ProfessionalService` schema for
+"Diep Lam Make Up"; Twitter Card; descriptive alt text on every
+photo; About expanded by two sentences (training in Hanoi,
+Adelaide + Vietnam work, one-to-one lessons in Vietnamese);
+contact gained one line telling visitors what to send.
+
+Deliberately NOT added: prices (still "Price on enquiry"),
+testimonials, client names, venues/dates per photo, or social
+links — none are verified. Vercel Analytics and Speed Insights in
+`layout.tsx` were not touched.
+
 ## Analytics (added 25 Nov 2026)
 
 - Packages: `@vercel/analytics` ^2.0.1 and `@vercel/speed-insights`

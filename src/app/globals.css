@@ -5,8 +5,12 @@
 html { scroll-behavior: smooth; }
 body { background: #fdf8f3; }
 
-/* Scroll reveal: subtle fade + rise, once per element */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+/* One visible focus ring for keyboard users, inside the palette */
+:focus-visible { outline: 2px solid #8a5530; outline-offset: 2px; }
+
+/* Scroll reveal: one short fade + small rise, once per element.
+   8px rise, 400ms, single ease-out curve (unslop pass 9). */
+.reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }

@@ -9,6 +9,13 @@ const config: Config = {
         display: ['Georgia', "'Times New Roman'", 'serif'],
       },
       colors: {
+        // One warm neutral ramp for text: primary / secondary / muted.
+        // (Unslop pass 2: stone-* greys removed, everything reads from this ramp.)
+        ink: {
+          DEFAULT: '#241a12',
+          secondary: '#5e554a',
+          muted: '#7b7266',
+        },
         brand: {
           50: '#fdf8f3',
           100: '#f5e9d9',
